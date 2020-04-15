@@ -3,27 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34B4AF8B2447689100AF100A /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4AF8A2447689100AF100A /* LeftMenuViewController.swift */; };
 		34EC340E2446F1020017006B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC340D2446F1020017006B /* AppDelegate.swift */; };
 		34EC34102446F1020017006B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC340F2446F1020017006B /* SceneDelegate.swift */; };
-		34EC34122446F1020017006B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC34112446F1020017006B /* ViewController.swift */; };
+		34EC34122446F1020017006B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC34112446F1020017006B /* DashboardViewController.swift */; };
 		34EC34152446F1020017006B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34EC34132446F1020017006B /* Main.storyboard */; };
 		34EC34172446F1060017006B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34EC34162446F1060017006B /* Assets.xcassets */; };
 		34EC341A2446F1060017006B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34EC34182446F1060017006B /* LaunchScreen.storyboard */; };
+		8D53651BCEDD8D6250D35B02 /* Pods_Dotadex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC859493575EC4E4493212 /* Pods_Dotadex.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AAC859493575EC4E4493212 /* Pods_Dotadex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dotadex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B4AF8A2447689100AF100A /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		34EC340A2446F1020017006B /* Dotadex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotadex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34EC340D2446F1020017006B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34EC340F2446F1020017006B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		34EC34112446F1020017006B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34EC34112446F1020017006B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		34EC34142446F1020017006B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34EC34162446F1060017006B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34EC34192446F1060017006B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34EC341B2446F1060017006B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB4F2FBE2303742AADAB02A4 /* Pods-Dotadex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dotadex.debug.xcconfig"; path = "Target Support Files/Pods-Dotadex/Pods-Dotadex.debug.xcconfig"; sourceTree = "<group>"; };
+		E67B7868A8F6417A464D1A41 /* Pods-Dotadex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dotadex.release.xcconfig"; path = "Target Support Files/Pods-Dotadex/Pods-Dotadex.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D53651BCEDD8D6250D35B02 /* Pods_Dotadex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				34EC340C2446F1020017006B /* Dotadex */,
 				34EC340B2446F1020017006B /* Products */,
+				AB1D75F534884A880172D8FC /* Pods */,
+				FAFC877DAEBE39A9D49187BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +67,31 @@
 			children = (
 				34EC340D2446F1020017006B /* AppDelegate.swift */,
 				34EC340F2446F1020017006B /* SceneDelegate.swift */,
-				34EC34112446F1020017006B /* ViewController.swift */,
+				34EC34112446F1020017006B /* DashboardViewController.swift */,
+				34B4AF8A2447689100AF100A /* LeftMenuViewController.swift */,
 				34EC34132446F1020017006B /* Main.storyboard */,
 				34EC34162446F1060017006B /* Assets.xcassets */,
 				34EC34182446F1060017006B /* LaunchScreen.storyboard */,
 				34EC341B2446F1060017006B /* Info.plist */,
 			);
 			path = Dotadex;
+			sourceTree = "<group>";
+		};
+		AB1D75F534884A880172D8FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB4F2FBE2303742AADAB02A4 /* Pods-Dotadex.debug.xcconfig */,
+				E67B7868A8F6417A464D1A41 /* Pods-Dotadex.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FAFC877DAEBE39A9D49187BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC859493575EC4E4493212 /* Pods_Dotadex.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34EC341E2446F1060017006B /* Build configuration list for PBXNativeTarget "Dotadex" */;
 			buildPhases = (
+				63743A436CCB1634E95ECF03 /* [CP] Check Pods Manifest.lock */,
 				34EC34062446F1020017006B /* Sources */,
 				34EC34072446F1020017006B /* Frameworks */,
 				34EC34082446F1020017006B /* Resources */,
+				03B5B3382B41B6B0FCFB1544 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +162,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03B5B3382B41B6B0FCFB1544 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dotadex/Pods-Dotadex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dotadex/Pods-Dotadex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dotadex/Pods-Dotadex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63743A436CCB1634E95ECF03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dotadex-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		34EC34062446F1020017006B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34EC34122446F1020017006B /* ViewController.swift in Sources */,
+				34EC34122446F1020017006B /* DashboardViewController.swift in Sources */,
 				34EC340E2446F1020017006B /* AppDelegate.swift in Sources */,
+				34B4AF8B2447689100AF100A /* LeftMenuViewController.swift in Sources */,
 				34EC34102446F1020017006B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +354,7 @@
 		};
 		34EC341F2446F1060017006B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB4F2FBE2303742AADAB02A4 /* Pods-Dotadex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +373,7 @@
 		};
 		34EC34202446F1060017006B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E67B7868A8F6417A464D1A41 /* Pods-Dotadex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
