@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,7 +31,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tH7-fo-mPm">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="JH7-Ih-18M">
+                                    <size key="itemSize" width="117" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="20" maxX="5" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeroCell" id="Rd5-U2-u2f" customClass="HeroCollectionViewCell" customModule="Dotadex" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="20" width="117" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gZM-05-32S">
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_hero_image" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-i4-xvD">
+                                                    <rect key="frame" x="16.5" y="0.0" width="84" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="84" id="U5C-Er-ygb"/>
+                                                        <constraint firstAttribute="height" constant="48" id="rbG-Jr-Fvb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPI-d3-ni0">
+                                                    <rect key="frame" x="0.0" y="56" width="117" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IPI-d3-ni0" firstAttribute="top" secondItem="vbt-i4-xvD" secondAttribute="bottom" constant="8" id="HGS-OI-Yia"/>
+                                                <constraint firstAttribute="trailing" secondItem="IPI-d3-ni0" secondAttribute="trailing" id="LyZ-BW-CRB"/>
+                                                <constraint firstItem="vbt-i4-xvD" firstAttribute="centerX" secondItem="gZM-05-32S" secondAttribute="centerX" id="X23-D2-cdA"/>
+                                                <constraint firstItem="vbt-i4-xvD" firstAttribute="top" secondItem="gZM-05-32S" secondAttribute="top" id="mgr-u7-nyG"/>
+                                                <constraint firstItem="IPI-d3-ni0" firstAttribute="leading" secondItem="gZM-05-32S" secondAttribute="leading" id="y85-wo-yn1"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="117" height="90"/>
+                                        <connections>
+                                            <outlet property="image" destination="vbt-i4-xvD" id="2Bw-hg-lgq"/>
+                                            <outlet property="nameLabel" destination="IPI-d3-ni0" id="hOC-Tu-3SE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zqZ-Td-bTC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZHf-2a-z1r"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tH7-fo-mPm" secondAttribute="bottom" id="KPh-F3-Djx"/>
+                            <constraint firstItem="tH7-fo-mPm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dbi-hK-ht2"/>
+                            <constraint firstItem="tH7-fo-mPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sjQ-tt-jaV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tH7-fo-mPm" secondAttribute="trailing" id="xgF-WW-tIH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="RBe-9D-H69">
@@ -40,10 +100,30 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="heroCollectionView" destination="tH7-fo-mPm" id="oAd-7z-DSc"/>
+                        <segue destination="921-Pf-vra" kind="show" identifier="DashboardToDetailSegue" id="ALk-zj-lwU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="129"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2RC-Kc-5lc">
+            <objects>
+                <viewController id="921-Pf-vra" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D4k-hE-NSS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IpD-Tc-zMN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="741-Q3-Vye"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LtE-MM-i5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="851"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="6nC-9j-hXc">
@@ -112,4 +192,7 @@
             <point key="canvasLocation" x="1780" y="125.4872563718141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="temp_hero_image" width="84" height="48"/>
+    </resources>
 </document>

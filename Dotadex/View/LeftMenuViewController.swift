@@ -14,8 +14,9 @@ protocol LeftMenuViewControllerDelegate: class {
 
 class LeftMenuViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
-    let menuTitleList = ["All Hero","Carry", "Disabler", "Lane Support", "Initiator",
-                         "Jungler", "Support", "Durable", "Nuker", "Pusher", "Escape"]
+//    let menuTitleList = ["All Heroes","Carry", "Disabler", "Lane Support", "Initiator",
+//                         "Jungler", "Support", "Durable", "Nuker", "Pusher", "Escape"]
+    var menuTitleList = ["All Heroes"]
     weak var delegate: LeftMenuViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -30,17 +31,10 @@ class LeftMenuViewController: UIViewController {
         menuTableView.contentInsetAdjustmentBehavior = .never
         menuTableView.tableFooterView = UIView()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setMenuTitleList(with roles: [String]) {
+        menuTitleList.append(contentsOf: roles)
     }
-    */
-
 }
 
 extension LeftMenuViewController: UITableViewDataSource, UITableViewDelegate {
