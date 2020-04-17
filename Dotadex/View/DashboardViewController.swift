@@ -32,6 +32,7 @@ class DashboardViewController: UIViewController {
         } else if segue.identifier == "DashboardToDetailSegue" {
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.hero = viewModel.selectedHero
+            detailViewController.similarHeroes = viewModel.similarHeroes
         }
     }
 }

@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var thirdSimilarHeroImage: UIImageView!
     
     var hero: Hero!
+    var similarHeroes: [Hero]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +33,7 @@ class DetailViewController: UIViewController {
     
     func setUI() {
         heroNameLabel.text = hero.name
-        let imageCache = NSCache<NSString, UIImage>()
-        if let cachedImage = imageCache.object(forKey: hero.imageURL as NSString) {
-            heroImage.image = cachedImage
-        } else {
-            heroImage.sd_setImage(with: URL(string: hero.imageURL),
-                                  placeholderImage: UIImage(named: "temp_hero_image"),
-                                  completed: { [weak self] (image, _, _, _) -> Void in
-                                    guard let `self` = self, let heroImage = image else { return }
-                                    imageCache.setObject(heroImage, forKey: self.hero.imageURL as NSString)
-            })
-        }
-        
+        heroImage.setImage(urlString: hero.imageURL)
         attackTypeLabel.text = hero.attackType
         rolesLabel.text = hero.roles.joined(separator: " - ")
         strLabel.text = String(hero.baseStr)
@@ -51,17 +41,9 @@ class DetailViewController: UIViewController {
         intLabel.text = String(hero.baseInt)
         attackLabel.text = String(hero.baseMinAttack) + " - " + String(hero.baseMaxAttack)
         speedLabel.text = String(hero.moveSpeed)
-        healthLabel.text = String(hero.baseHealth)
+        healthLabel.text = String(hero.baseHealth)        
+        firstSimilarHeroImage.setImage(urlString: similarHeroes[0].imageURL)
+        secondSimilarHeroImage.setImage(urlString: similarHeroes[1].imageURL)
+        thirdSimilarHeroImage.setImage(urlString: similarHeroes[2].imageURL)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

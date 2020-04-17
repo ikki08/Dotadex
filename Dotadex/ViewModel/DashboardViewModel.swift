@@ -15,6 +15,28 @@ class DashboardViewModel: NSObject {
     var heroRoleList = Array<String>()
     var selectedIndex = -1
     var selectedHero: Hero { return filteredHeroList[selectedIndex] }
+    var similarHeroes: [Hero] {
+        var tempHeroList = heroList
+        tempHeroList.removeAll(where: { $0.name == selectedHero.name })
+        switch selectedHero.primaryAttribute {
+        case "str":
+            tempHeroList.sort(by: { hero1, hero2 in
+                hero1.baseMaxAttack > hero2.baseMaxAttack
+            })
+        case "agi":
+            tempHeroList.sort(by: { hero1, hero2 in
+                hero1.moveSpeed > hero2.moveSpeed
+            })
+        case "int":
+            tempHeroList.sort(by: { hero1, hero2 in
+                hero1.baseMana > hero2.baseMana
+            })
+        default:
+            break
+        }
+        
+        return [tempHeroList[0], tempHeroList[1], tempHeroList[2]]
+    }
     
     func getHeroList(completion:@escaping (_ error: Error?) -> Void) {
         let getHeroListRequest = GetHeroListRequest()
@@ -41,7 +63,7 @@ class DashboardViewModel: NSObject {
             heroList.append(hero)
             heroRoles.append(contentsOf: hero.roles)
         }
-        
+                
         heroRoleList = Array(NSOrderedSet(array: heroRoles)) as! [String]
         heroRoleList.sort()
         heroList.sort(by: {

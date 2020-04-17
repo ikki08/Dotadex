@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3436689B24495778009EDCFD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3436689A24495778009EDCFD /* DetailViewController.swift */; };
+		3436689D2449869D009EDCFD /* UIImageView+SetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3436689C2449869D009EDCFD /* UIImageView+SetImage.swift */; };
 		347E8F70244844040089B4A7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E8F6F244844040089B4A7 /* APIRequest.swift */; };
 		347E8F73244844330089B4A7 /* RESTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E8F72244844330089B4A7 /* RESTRequest.swift */; };
 		347E8F79244844760089B4A7 /* NSError+DefaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347E8F77244844760089B4A7 /* NSError+DefaultError.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		1AAC859493575EC4E4493212 /* Pods_Dotadex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dotadex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3436689A24495778009EDCFD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3436689C2449869D009EDCFD /* UIImageView+SetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SetImage.swift"; sourceTree = "<group>"; };
 		347E8F6F244844040089B4A7 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		347E8F72244844330089B4A7 /* RESTRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTRequest.swift; sourceTree = "<group>"; };
 		347E8F77244844760089B4A7 /* NSError+DefaultError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+DefaultError.swift"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				347E8F77244844760089B4A7 /* NSError+DefaultError.swift */,
 				347E8F78244844760089B4A7 /* UIAlertController+DefaultAlert.swift */,
+				3436689C2449869D009EDCFD /* UIImageView+SetImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				3436689B24495778009EDCFD /* DetailViewController.swift in Sources */,
 				347E8F7E244847B60089B4A7 /* HeroCollectionViewCell.swift in Sources */,
 				347E8F7A244844760089B4A7 /* UIAlertController+DefaultAlert.swift in Sources */,
+				3436689D2449869D009EDCFD /* UIImageView+SetImage.swift in Sources */,
 				34EC34122446F1020017006B /* DashboardViewController.swift in Sources */,
 				347E8F822448484F0089B4A7 /* DashboardViewModel.swift in Sources */,
 				34EC340E2446F1020017006B /* AppDelegate.swift in Sources */,
