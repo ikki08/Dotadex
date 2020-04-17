@@ -13,6 +13,8 @@ class DashboardViewModel: NSObject {
     private var heroList = Array<Hero>()
     var filteredHeroList = Array<Hero>()
     var heroRoleList = Array<String>()
+    var selectedIndex = -1
+    var selectedHero: Hero { return filteredHeroList[selectedIndex] }
     
     func getHeroList(completion:@escaping (_ error: Error?) -> Void) {
         let getHeroListRequest = GetHeroListRequest()

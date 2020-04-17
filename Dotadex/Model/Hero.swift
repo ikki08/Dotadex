@@ -16,7 +16,9 @@ class Hero: NSObject {
     var baseStr = 0
     var baseInt = 0
     var baseHealth = 0
+    var baseMinAttack = 0
     var baseMaxAttack = 0
+    var baseMana = 0
     var moveSpeed = 0
     var roles = Array<String>()
     var imageURL = ""

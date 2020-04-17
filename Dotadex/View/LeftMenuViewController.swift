@@ -14,17 +14,9 @@ protocol LeftMenuViewControllerDelegate: class {
 
 class LeftMenuViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
-//    let menuTitleList = ["All Heroes","Carry", "Disabler", "Lane Support", "Initiator",
-//                         "Jungler", "Support", "Durable", "Nuker", "Pusher", "Escape"]
     var menuTitleList = ["All Heroes"]
     weak var delegate: LeftMenuViewControllerDelegate?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
+        
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         

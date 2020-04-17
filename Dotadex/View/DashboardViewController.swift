@@ -29,6 +29,9 @@ class DashboardViewController: UIViewController {
             let leftMenuViewController = sideMenuNavController.topViewController as! LeftMenuViewController
             leftMenuViewController.delegate = self as LeftMenuViewControllerDelegate
             leftMenuViewController.setMenuTitleList(with: viewModel.heroRoleList)
+        } else if segue.identifier == "DashboardToDetailSegue" {
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.hero = viewModel.selectedHero
         }
     }
 }
@@ -69,6 +72,7 @@ extension DashboardViewController: UICollectionViewDataSource {
 
 extension DashboardViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.selectedIndex = indexPath.row
         performSegue(withIdentifier: "DashboardToDetailSegue", sender: self)
     }
 }
