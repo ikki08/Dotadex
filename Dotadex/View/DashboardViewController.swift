@@ -11,6 +11,7 @@ import SideMenu
 
 class DashboardViewController: UIViewController {
     @IBOutlet weak var heroCollectionView: UICollectionView!
+    var activityIndicator: UIActivityIndicatorView!
     
     let viewModel = DashboardViewModel()
     
@@ -18,6 +19,7 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         title = "All Heroes"
         heroCollectionView.contentInsetAdjustmentBehavior = .never
+        addActivityIndicator()
         getHeroList()
     }
 
@@ -40,7 +42,15 @@ class DashboardViewController: UIViewController {
 // MARK: - Private
 
 extension DashboardViewController {
+    func addActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        activityIndicator.hidesWhenStopped = true
+        let barButton = UIBarButtonItem(customView: activityIndicator)
+        navigationItem.setRightBarButton(barButton, animated: true)
+    }
+    
     func getHeroList() {
+        activityIndicator.startAnimating()
         viewModel.getHeroList() { error in
             if error == nil {
                 self.heroCollectionView.isHidden = false
@@ -49,6 +59,8 @@ extension DashboardViewController {
                 let alert = UIAlertController.defaultAlert
                 self.present(alert, animated: true, completion: nil)
             }
+            
+            self.activityIndicator.stopAnimating()
         }
     }
 }
