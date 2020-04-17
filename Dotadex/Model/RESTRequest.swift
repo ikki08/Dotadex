@@ -12,7 +12,9 @@ struct StatusCode {
 }
 
 class RESTRequest: NSObject {
-    func execute(request: APIRequest, success:@escaping (_ response: Any) -> Void, failure:@escaping (_ error: Error) -> Void) {
+    func execute(request: APIRequest,
+                 success:@escaping (_ response: Any) -> Void,
+                 failure:@escaping (_ error: Error) -> Void) {
         let requestHeaders = ["Content-Type": "application/json",
                               "Accept": "application/json"]
         let requestURL = ServerURL + request.endpoint()
@@ -44,7 +46,10 @@ class RESTRequest: NSObject {
         }
     }
     
-    func dataRequest(requestURL: String, requestMethod: String, requestHeaders: [String : String], requestArrayParameter: [Any]?) -> DataRequest {
+    func dataRequest(requestURL: String,
+                     requestMethod: String,
+                     requestHeaders: [String : String],
+                     requestArrayParameter: [Any]?) -> DataRequest {
         var urlRequest = URLRequest(url: URL(string: requestURL)!)
         urlRequest.httpMethod = requestMethod
         urlRequest.allHTTPHeaderFields = requestHeaders
@@ -55,7 +60,10 @@ class RESTRequest: NSObject {
         return Alamofire.request(urlRequest)
     }
     
-    func dataRequest(requestURL: String, requestMethod: HTTPMethod, requestHeaders: HTTPHeaders, requestParameters: [String:Any]?) -> DataRequest {
+    func dataRequest(requestURL: String,
+                     requestMethod: HTTPMethod,
+                     requestHeaders: HTTPHeaders,
+                     requestParameters: [String : Any]?) -> DataRequest {
         return Alamofire.request(requestURL,
                                  method: requestMethod,
                                  parameters: requestParameters,

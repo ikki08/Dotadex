@@ -19,6 +19,7 @@ class Hero: NSObject {
     var baseMaxAttack = 0
     var moveSpeed = 0
     var roles = Array<String>()
+    var imageURL = ""
     
     init(json: JSON) {
         super.init()
@@ -40,6 +41,8 @@ class Hero: NSObject {
                 roles.append(role.string!)
             }
         }
+        
+        imageURL = ServerURL + json["img"].string!
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeroCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
@@ -14,5 +15,17 @@ class HeroCollectionViewCell: UICollectionViewCell {
     
     func setupCell(hero: Hero) {
         nameLabel.text = hero.name
+        let imageCache = NSCache<NSString, UIImage>()
+        if let cachedImage = imageCache.object(forKey: hero.imageURL as NSString) {
+            image.image = cachedImage
+        } else {
+            image.sd_setImage(with: URL(string: hero.imageURL),
+                              placeholderImage: UIImage(named: "temp_hero_image"),
+                              completed: { (image, _, _, _) -> Void in
+                guard let heroImage = image else { return }
+                
+                imageCache.setObject(heroImage, forKey: hero.imageURL as NSString)
+            })
+        }
     }
 }
