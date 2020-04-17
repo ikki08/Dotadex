@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class DashboardViewModel: NSObject {
     private var heroList = Array<Hero>()
@@ -38,7 +39,7 @@ class DashboardViewModel: NSObject {
         return [tempHeroList[0], tempHeroList[1], tempHeroList[2]]
     }
     
-    func getHeroList(completion:@escaping (_ error: Error?) -> Void) {
+    func getHeroList(completion: @escaping (_ error: Error?) -> Void) {
         let getHeroListRequest = GetHeroListRequest()
         let restRequest = RESTRequest()
         restRequest.execute(request: getHeroListRequest,
